@@ -1,0 +1,7 @@
+streamlit
+google-genai
+trafilatura
+datasets
+python-dotenv
+pydantic
+lxml_html_clean
