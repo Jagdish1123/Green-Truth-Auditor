@@ -79,7 +79,30 @@ Prove the architecture's accuracy by running the headless dataset evaluation too
 ```bash
 python evaluate.py
 ```
-This generates a strict predicted matrix in the terminal and saves any mismatch edge cases to `eval_failures.json` for prompt debugging.
+---
+
+## 📓 Jupyter Notebook Implementation
+
+The project includes a comprehensive Jupyter notebook (`green_truth_auditor.ipynb`) that demonstrates the step-by-step implementation of the Green-Truth Auditor. This notebook covers:
+
+### Notebook Sections:
+1. **Step 0 — Install Dependencies:** Installs all required Python libraries.
+2. **Step 1 — Load & Train on the Greenwashing Dataset:** Loads the `Emanuse/greenwashing` dataset from Hugging Face, preprocesses the text, and trains a TF-IDF + Logistic Regression model for classifying marketing fluff vs. evidence-based claims.
+3. **Step 2 — Buzzword Detection (Rule-Based Flag System):** Implements a rule-based system to detect vague greenwashing buzzwords and positive evidence signals.
+4. **Step 3 — RAG: Certified Brand Database (B-Corp / GOTS):** Builds a FAISS-based semantic search index over certified brands for RAG verification.
+5. **Step 4 — Input Interface: Text Box + URL Scraper:** Provides functions to scrape text from URLs and handle user input.
+6. **Step 5 — AI Reasoning Summary Generator:** Generates human-readable explanations for audit results.
+7. **Step 6 — Scoring Algorithm:** Implements the deterministic scoring system.
+8. **Step 7 — Main Audit Function:** Combines all components into the main audit pipeline.
+9. **Step 8 — Model Evaluation:** Evaluates the trained model on test data.
+10. **Step 9 — Interactive Widget (Colab UI):** Provides an interactive Jupyter widget for testing the auditor.
+
+### Running the Notebook:
+1. Open the notebook in Jupyter Lab or Google Colab.
+2. Run the cells in order from top to bottom.
+3. The interactive widget at the end allows you to input product descriptions or URLs for auditing.
+
+The notebook serves as both a development environment and a demonstration of the core algorithms.
 
 ---
 
